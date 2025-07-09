@@ -3,6 +3,7 @@
     <ion-title class="ion-text-center">Connexion</ion-title>
   </ion-toolbar>
 </ion-header>
+
 <div class="login-content">
   <div class="form-container">
     <form [formGroup]="form" (ngSubmit)="submit()">
@@ -42,7 +43,7 @@
       </ion-text>
 
       <div class="link-container">
-        <a routerLink="/auth/register">Pas encore de compte ? Inscrivez-vous</a>
+        <a routerLink="/register">Pas encore de compte ? Inscrivez-vous</a>
       </div>
     </form>
   </div>

@@ -11,8 +11,11 @@ import { AuthService } from 'src/app/core/auth.service';
 })
 export class RegisterPage {
 
+  
   form!: FormGroup;
   error = '';
+  loading = false;
+  showPassword = false;
 
   constructor(
     private fb: FormBuilder,
@@ -25,18 +28,26 @@ export class RegisterPage {
     });
   }
 
+  togglePassword() {
+    this.showPassword = !this.showPassword;
+  }
+
   submit() {
     if (this.form.invalid) return;
 
+    this.loading = true;
+    this.error = '';
     this.authService.register(this.form.value).subscribe({
       next: (res) => {
-        localStorage.setItem('token', res.token);
+        this.loading = false;
         this.router.navigate(['/dashboard']);
       },
       error: () => {
-        this.error = "Échec de la connexion. Vérifiez vos identifiants.";
+        this.loading = false;
+        this.error = 'Email ou mot de passe incorrect';
       }
     });
   }
+
 
 }
