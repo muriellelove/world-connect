@@ -1,0 +1,7 @@
+{
+  "name": "world-connect",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
