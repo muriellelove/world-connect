@@ -9,10 +9,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptor } from './core/auth.interceptor';
+import { BasicLayoutModule } from './layouts/basic-layout/basic-layout.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, BasicLayoutModule],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

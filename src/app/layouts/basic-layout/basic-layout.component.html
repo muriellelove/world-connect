@@ -1,0 +1,15 @@
+<ion-split-pane contentId="main-content">
+  <!-- Sidebar (menu latéral) -->
+  <app-sidebar contentId="main-content" type="overlay"></app-sidebar>
+
+  <!-- Zone principale -->
+  <div class="main-content" id="main-content">
+    <!-- Header (barre du haut avec titre dynamique) -->
+    <app-header></app-header>
+
+    <!-- Contenu des pages (enfants du layout) -->
+    <ion-content>
+      <router-outlet></router-outlet>
+    </ion-content>
+  </div>
+</ion-split-pane>

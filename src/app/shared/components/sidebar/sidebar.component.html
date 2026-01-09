@@ -1,0 +1,17 @@
+
+  <ion-header>
+    <ion-toolbar color="light">
+      <ion-title>WorldConnect</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle auto-hide="false" *ngFor="let item of menuItems">
+        <ion-item [routerLink]="item.route" routerDirection="root">
+          <ion-icon [name]="item.icon" slot="start"></ion-icon>
+          <ion-label>{{ item.title }}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>

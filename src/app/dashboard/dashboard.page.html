@@ -1,13 +1,42 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>dashboard</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-split-pane contentId="main-content">
+  
+  <!-- Page content -->
+  <div class="main" id="main-content">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">dashboard</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+    <ion-content class="ion-padding dashboard-content">
+      <h2>Bienvenue, {{ user?.name }} 👋</h2>
+      <p class="subtitle">Votre portail pour explorer les pays du monde et leur météo</p>
+
+      <div class="metrics">
+        <div class="metric-card">
+          <ion-icon name="flag" class="icon"></ion-icon>
+          <div>
+            <h3>250</h3>
+            <p>Pays référencés</p>
+          </div>
+        </div>
+        <div class="metric-card">
+          <ion-icon name="globe-outline" class="icon"></ion-icon>
+          <div>
+            <h3>6</h3>
+            <p>Continents</p>
+          </div>
+        </div>
+        <div class="metric-card">
+          <ion-icon name="cloudy-outline" class="icon"></ion-icon>
+          <div>
+            <h3>35+</h3>
+            <p>Météos chargées</p>
+          </div>
+        </div>
+      </div>
+
+      <img src="assets/world-illustration.avif" class="hero-image" />
+
+      <div class="quick-actions">
+        <ion-button expand="block" color="tertiary" routerLink="/countries">🌍 Explorer les pays</ion-button>
+        <ion-button expand="block" color="warning" (click)="goToRandomCountry()">🎲 Pays aléatoire</ion-button>
+      </div>
+    </ion-content>
+  </div>
+</ion-split-pane>
